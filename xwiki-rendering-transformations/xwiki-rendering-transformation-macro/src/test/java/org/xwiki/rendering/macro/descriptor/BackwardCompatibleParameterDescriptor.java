@@ -20,6 +20,7 @@
 package org.xwiki.rendering.macro.descriptor;
 
 import java.lang.reflect.Type;
+import java.util.Map;
 
 /**
  * Backward compatible implementation of {@link ParameterDescriptor}.
@@ -78,5 +79,11 @@ public class BackwardCompatibleParameterDescriptor implements ParameterDescripto
     public boolean isMandatory()
     {
         return this.parameterDescriptor.isMandatory();
+    }
+
+    @Override
+    public Map<String, String> getEditDisplayerParameters()
+    {
+        return this.parameterDescriptor.getEditDisplayerParameters();
     }
 }

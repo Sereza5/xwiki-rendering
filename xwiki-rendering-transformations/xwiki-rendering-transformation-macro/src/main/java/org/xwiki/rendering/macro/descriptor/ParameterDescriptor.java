@@ -20,6 +20,7 @@
 package org.xwiki.rendering.macro.descriptor;
 
 import java.lang.reflect.Type;
+import java.util.Map;
 
 import org.xwiki.properties.PropertyGroupDescriptor;
 import org.xwiki.stability.Unstable;
@@ -72,6 +73,15 @@ public interface ParameterDescriptor
      * @since 1.7
      */
     boolean isMandatory();
+
+    /**
+     * This allows a wider use of edit templates for common types of parameters.
+     * E.g. 
+     * @return a map of key-value pairs used in the editTemplate of the parameter.
+     * @since 18.0.0
+     */
+    @Unstable
+    Map<String, String> getEditDisplayerParameters();
 
     /**
      * @return indicate if the parameter is deprecated.

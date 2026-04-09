@@ -20,6 +20,7 @@
 package org.xwiki.rendering.macro.descriptor;
 
 import java.lang.reflect.Type;
+import java.util.Map;
 
 import org.xwiki.properties.PropertyDescriptor;
 import org.xwiki.properties.PropertyGroupDescriptor;
@@ -95,6 +96,12 @@ public class DefaultParameterDescriptor implements ParameterDescriptor
     public boolean isMandatory()
     {
         return this.propertyDescriptor.isMandatory();
+    }
+
+    @Override
+    public Map<String, String> getEditDisplayerParameters()
+    {
+        return this.propertyDescriptor.getEditDisplayerParameters();
     }
 
     @Override
